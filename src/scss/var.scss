@@ -1,0 +1,12 @@
+@mixin small_desktop {
+  @media all and (max-width: 1279px) { @content; }
+}
+@mixin tablet {
+  @media all and (max-width: 1024px) { @content; }
+}
+@mixin big_phone {
+  @media all and (max-width: 767px) { @content; }
+}
+@mixin phone {
+  @media all and (max-width: 479px) { @content; }
+}
