@@ -6,14 +6,14 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
     uglify = require('gulp-uglify'),
-    spritesmith = require('gulp.spritesmith'),
-    pug = require('gulp-pug');
+    spritesmith = require('gulp.spritesmith');
+    // pug = require('gulp-pug');
 
 var Path = {
   js_path : "./src/js/*.js",
   sass_path : "./src/scss/*.scss",
-  sprite_path : "./src/img/*.png",
-  pug_path : "./src/pug/*.pug"
+  sprite_path : "./src/img/*.png"
+  // pug_path : "./src/pug/*.pug"
 };
 
 gulp.task('sprite', function () {
@@ -25,7 +25,7 @@ gulp.task('sprite', function () {
     imgPath: '../img/sprite.png'
   }));
   var imgStream = spriteData.img
-  .pipe(gulp.dest('./static/img'));
+  .pipe(gulp.dest('./static/img/'));
   var cssStream = spriteData.css
   .pipe(gulp.dest('./src/scss/'))
 });
@@ -34,7 +34,6 @@ gulp.task('scss', function() {
   return gulp
   .src('./src/scss/style.scss')
   .pipe(plumber(function (error) {
-    gutil.log(error.message);
     this.emit('end');
   }))
   .pipe(sass({
@@ -61,7 +60,6 @@ gulp.task('scripts', function() {
   return gulp
   .src(Path.js_path)
   .pipe(plumber(function (error) {
-    gutil.log(error.message);
     this.emit('end');
   }))
   // .pipe(uglify())
@@ -71,14 +69,14 @@ gulp.task('scripts', function() {
   }));
 });
 
-gulp.task('views', function buildHTML() {
-  return gulp.src('src/pug/*.pug')
-  .pipe(pug())
-  .pipe(gulp.dest('./'))
-  .pipe(browserSync.reload({
-    stream: true
-  }));
-});
+// gulp.task('views', function buildHTML() {
+//   return gulp.src('src/pug/*.pug')
+//   .pipe(pug())
+//   .pipe(gulp.dest('./'))
+//   .pipe(browserSync.reload({
+//     stream: true
+//   }));
+// });
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -88,13 +86,14 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('default', function() {
+gulp.task('default', ['sprite'], function() {
   gulp.start('scss');
   gulp.start('scripts');
-  gulp.start('views');
+  // gulp.start('views');
 });
 
 gulp.task('watch', ['browser-sync'], function() {
+  watch('index.html', browserSync.reload);
   watch(Path.sprite_path, function() {
     gulp.start('sprite');
   });
@@ -104,7 +103,7 @@ gulp.task('watch', ['browser-sync'], function() {
   watch(Path.js_path, function() {
     gulp.start('scripts');
   });
-  watch(Path.pug_path, function() {
-    gulp.start('views')
-  })
+  // watch(Path.pug_path, function() {
+  //   gulp.start('views')
+  // })
 });

@@ -10,3 +10,20 @@
 @mixin phone {
   @media all and (max-width: 479px) { @content; }
 }
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder { color: $color; }
+  &::-moz-placeholder { color: $color; }
+  &:-moz-placeholder { color: $color; }
+  &:-ms-input-placeholder { color: $color; }
+}
+
+$grey_back: #f2f2f2;
+$blue_back: #859cb5;
+$blue_font: #6e849c;
+$blue_dark: #263846;
+$orange: #fd9a0d;
+
+$pnr: 'Proxima Nova Rg';
+$pnb: 'Proxima Nova Bd';
+$bebas: 'Bebas Neue';

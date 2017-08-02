@@ -1,0 +1,979 @@
+/*! normalize.css v1.0.1 | MIT License | git.io/normalize */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+html, button, input, select, textarea {
+  font-family: sans-serif; }
+
+body {
+  margin: 0; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:active, a:hover {
+  outline: 0; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+h2 {
+  font-size: 1.5em;
+  margin: .83em 0; }
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0; }
+
+h5 {
+  font-size: .83em;
+  margin: 1.67em 0; }
+
+h6 {
+  font-size: .75em;
+  margin: 2.33em 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+p, pre {
+  margin: 1em 0; }
+
+code, kbd, pre, samp {
+  font-family: monospace,serif;
+  _font-family: 'courier new',monospace;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+dl, menu, ol, ul {
+  margin: 1em 0; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+menu, ol, ul {
+  padding: 0 0 0 40px; }
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 0; }
+
+form {
+  margin: 0; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px; }
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type="checkbox"], input[type="radio"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: local("Proxima Nova Regular"), local("ProximaNova-Regular"), url("/static/fonts/ProximaNova-Regular.woff2") format("woff2"), url("/static/fonts/ProximaNova-Regular.woff") format("woff"), url("/static/fonts/ProximaNova-Regular.ttf") format("truetype"), url("/static/fonts/ProximaNova-Regular.svg#ProximaNova-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Bd';
+  src: local("Proxima Nova Bold"), local("ProximaNova-Bold"), url("/static/fonts/ProximaNova-Bold.woff2") format("woff2"), url("/static/fonts/ProximaNova-Bold.woff") format("woff"), url("/static/fonts/ProximaNova-Bold.ttf") format("truetype"), url("/static/fonts/ProximaNova-Bold.svg#ProximaNova-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local("Bebas Neue Bold"), local("BebasNeueBold"), url("/static/fonts/BebasNeueBold.woff2") format("woff2"), url("/static/fonts/BebasNeueBold.woff") format("woff"), url("/static/fonts/BebasNeueBold.ttf") format("truetype"), url("/static/fonts/BebasNeueBold.svg#BebasNeueBold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-doc, .document_item.doc::before {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 46px;
+  height: 60px; }
+
+.icon-info_adress, .information_cell.adress .information_icon {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -100px;
+  width: 26px;
+  height: 41px; }
+
+.icon-info_build, .information_cell.build .information_icon {
+  background-image: url(../img/sprite.png);
+  background-position: -138px 0px;
+  width: 33px;
+  height: 41px; }
+
+.icon-info_company, .information_cell.company .information_icon {
+  background-image: url(../img/sprite.png);
+  background-position: -171px 0px;
+  width: 24px;
+  height: 42px; }
+
+.icon-info_cost, .information_cell.cost .information_icon {
+  background-image: url(../img/sprite.png);
+  background-position: -138px -41px;
+  width: 30px;
+  height: 41px; }
+
+.icon-info_date, .information_cell.date .information_icon {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -60px;
+  width: 41px;
+  height: 40px; }
+
+.icon-pdf, .document_item.pdf::before {
+  background-image: url(../img/sprite.png);
+  background-position: -46px 0px;
+  width: 45px;
+  height: 60px; }
+
+.icon-slider_arrow, .main_slider_block .slick-arrow {
+  background-image: url(../img/sprite.png);
+  background-position: -26px -100px;
+  width: 26px;
+  height: 41px; }
+
+.icon-status_icon, .status_graph::after {
+  background-image: url(../img/sprite.png);
+  background-position: -91px 0px;
+  width: 47px;
+  height: 41px; }
+
+body {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.hidden {
+  display: none !important; }
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto; }
+  @media all and (max-width: 767px) {
+    .container {
+      padding: 0 5px; } }
+
+.complexes_container {
+  background-color: #f2f2f2; }
+  @media all and (max-width: 767px) {
+    .complexes_container {
+      display: none; } }
+
+.complexes_block {
+  padding: 7px 0 7px 195px; }
+
+.complexes_item {
+  position: relative;
+  font-family: "Proxima Nova Rg";
+  color: #6e849c;
+  font-size: 12px;
+  line-height: 1;
+  border-bottom: 1px solid lightgray;
+  text-decoration: none;
+  outline: none;
+  margin-right: 25px; }
+  .complexes_item.active, .complexes_item:hover {
+    color: #000;
+    border-bottom-color: transparent; }
+    .complexes_item.active::after, .complexes_item:hover::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 8px 7px 8px;
+      border-color: transparent transparent #fff transparent; }
+
+.main_header_block {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  align-items: flex-start;
+  padding: 20px 30px 20px 10px; }
+  @media all and (max-width: 767px) {
+    .main_header_block {
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      align-items: center; } }
+
+.menu_button {
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #fd9a0d;
+  outline: none;
+  margin-right: 30px;
+  margin-top: 10px; }
+  .menu_button .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fd9a0d;
+    margin-bottom: 3px; }
+    .menu_button .line:last-child {
+      margin-bottom: 0; }
+
+.logo {
+  display: block;
+  margin-right: 50px; }
+
+.menu {
+  width: 100%;
+  max-width: 750px;
+  margin-top: 20px; }
+  .menu.active .menu_item:nth-child(n+7) {
+    display: inline-block; }
+  @media all and (max-width: 767px) {
+    .menu {
+      width: 100%;
+      -webkit-box-ordinal-group: 5;
+      -moz-box-ordinal-group: 5;
+      order: 4;
+      display: none;
+      background: #f2f2f2; }
+      .menu.active {
+        display: -webkit-box;
+        display: -moz-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        flex-direction: column; }
+        .menu.active .menu_item:nth-child(n+7) {
+          display: none; } }
+
+.menu_item {
+  display: inline-block;
+  font-family: "Proxima Nova Bd";
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #6e849c;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  -moz-transition: all linear 0.3s;
+  transition: all linear 0.3s; }
+  .menu_item:nth-child(n+7) {
+    display: none; }
+  .menu_item:hover {
+    color: #000;
+    text-decoration: none; }
+
+.phone_block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  margin-left: auto; }
+
+.phone_tel {
+  outline: none;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 5px; }
+  .phone_tel .city_code {
+    font-family: "Proxima Nova Rg";
+    font-size: 13px;
+    padding-left: 3px; }
+  .phone_tel .number {
+    font-family: "Proxima Nova Bd";
+    font-size: 24px; }
+
+.phone_button {
+  font-family: "Proxima Nova Rg";
+  font-size: 11px;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  padding: 7px 15px;
+  border: 1px solid #fd9a0d;
+  -moz-transition: all linear 0.1s;
+  transition: all linear 0.1s; }
+  .phone_button:hover {
+    background-color: #fd9a0d;
+    color: #fff; }
+
+.main_slider_container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+
+.main_slider_block {
+  width: 100%; }
+  .main_slider_block .slick-arrow {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    outline: none;
+    padding: 0; }
+    .main_slider_block .slick-arrow.slick-prev {
+      -webkit-transform: translateY(-50%) rotate(180deg);
+      -moz-transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-50%) rotate(180deg); }
+    .main_slider_block .slick-arrow.slick-next {
+      right: 10%; }
+
+.main_slider_item {
+  position: relative;
+  float: left;
+  width: 100%; }
+
+.main_slider_text {
+  position: absolute;
+  top: 45px;
+  left: 0; }
+  .main_slider_text .done {
+    display: inline-block;
+    font-family: "Proxima Nova Rg";
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 35px;
+    background: #fd9a0d; }
+
+.main_slider_title {
+  font-family: "Bebas Neue";
+  font-size: 58px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  padding: 10px 30px;
+  background: rgba(133, 156, 181, 0.7); }
+
+.main_slider_link {
+  color: inherit;
+  outline: none; }
+  .main_slider_link:hover {
+    text-decoration: none; }
+
+.slider_img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.main_slider_navigation {
+  position: absolute;
+  width: 100%;
+  max-width: 420px;
+  left: 50%;
+  bottom: 30px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  justify-content: center; }
+  .main_slider_navigation .slick-track {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    justify-content: center; }
+
+.main_slider_navigation_item {
+  position: relative;
+  margin: 0 10px;
+  width: 88px !important;
+  border: 4px solid #fff;
+  cursor: pointer; }
+  .main_slider_navigation_item:hover {
+    -moz-box-shadow: 0 0 0 3px #fff;
+    box-shadow: 0 0 0 3px #fff; }
+  .main_slider_navigation_item.slick-current {
+    outline: none;
+    -moz-box-shadow: 0 0 0 3px #fff;
+    box-shadow: 0 0 0 3px #fff; }
+    .main_slider_navigation_item.slick-current::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 12px 12px 12px;
+      border-color: transparent transparent #fff transparent; }
+
+.main_slider_navigation_img {
+  display: block;
+  min-width: 80px;
+  width: 100%;
+  height: auto; }
+
+.informations_container {
+  background: #fd9a0d;
+  padding: 35px 0;
+  margin-bottom: 65px; }
+
+.informations_block {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  justify-content: space-between; }
+
+.information_cell {
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  align-items: flex-start; }
+
+.information_icon {
+  margin-right: 15px; }
+
+.information_text {
+  margin: 0;
+  font-family: "Proxima Nova Bd";
+  font-size: 16px;
+  color: #fff;
+  margin-top: 3px; }
+  .information_text a {
+    color: inherit;
+    text-decoration: none;
+    outline: none; }
+
+.about_container {
+  margin-bottom: 75px; }
+
+.about_block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  flex-wrap: wrap; }
+
+.about_title {
+  width: 100%;
+  font-family: "Bebas Neue";
+  font-size: 42px;
+  color: #263846;
+  text-transform: uppercase;
+  margin: 0 0 30px; }
+
+.about_text {
+  position: relative;
+  font-family: "Proxima Nova Rg";
+  font-size: 18px;
+  line-height: 26px;
+  color: #263846;
+  max-width: 765px;
+  margin: 0;
+  margin-right: auto;
+  max-height: 100%; }
+  .about_text.big {
+    max-height: 190px;
+    overflow: hidden;
+    padding-bottom: 60px; }
+    .about_text.big::after {
+      display: block; }
+    .about_text.big .view_more {
+      display: block; }
+  .about_text.active {
+    max-height: 100%;
+    overflow: visible; }
+    .about_text.active .view_more {
+      -webkit-transform: translateX(-50%) rotate(135deg);
+      -moz-transform: translateX(-50%) rotate(135deg);
+      transform: translateX(-50%) rotate(135deg); }
+  .about_text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: none;
+    width: 100%;
+    height: 60px;
+    background: -moz-linear-gradient(bottom, #fff, rgba(255, 255, 255, 0.5));
+    background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0.5)); }
+  .about_text .view_more {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    -webkit-transform: translateX(-50%) rotate(-45deg);
+    -moz-transform: translateX(-50%) rotate(-45deg);
+    transform: translateX(-50%) rotate(-45deg);
+    display: none;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-left: 4px solid #fd9a0d;
+    border-bottom: 4px solid #fd9a0d;
+    z-index: 10; }
+
+.about_slogan {
+  border-top: 5px solid #859cb5;
+  padding-top: 30px;
+  font-family: "Proxima Nova Bd";
+  font-size: 26px;
+  line-height: 30px;
+  max-width: 290px; }
+
+.plans_container {
+  background: #f2f2f2;
+  padding: 50px 0;
+  margin-bottom: 75px; }
+
+.plans_title {
+  font-family: "Bebas Neue";
+  font-size: 42px;
+  color: #263846;
+  text-transform: uppercase;
+  margin: 0 0 35px; }
+
+.status_container {
+  margin-bottom: 100px; }
+
+.status_header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 45px; }
+
+.status_title, .status_main_title, .map_title, .documents_title, .video_title, .main_form_title {
+  font-family: "Bebas Neue";
+  font-size: 42px;
+  color: #263846;
+  text-transform: uppercase;
+  margin: 0; }
+
+.status_graph {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 775px;
+  height: 55px;
+  background: #859cb5; }
+  .status_graph::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 30%;
+    top: -40px; }
+
+.done_graph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #fd9a0d;
+  z-index: 10; }
+
+.status_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: "Bebas Neue";
+  font-size: 34px;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 20; }
+
+.status_main {
+  margin-bottom: 15px; }
+
+.status_main_title {
+  text-align: center; }
+
+.map_container {
+  margin-bottom: 70px; }
+
+.map_title {
+  margin-bottom: 15px; }
+
+.documents_container {
+  margin-bottom: 35px; }
+
+.documents_title {
+  margin-bottom: 50px; }
+
+.documents_block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  flex-wrap: wrap; }
+  @media all and (max-width: 767px) {
+    .documents_block.active .document_item:nth-child(n+4) {
+      display: block; } }
+  .documents_block .view_more {
+    position: relative;
+    font-family: "Proxima Nova Rg";
+    font-size: 18px;
+    color: #263846;
+    border-bottom: 1px dashed #263846;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    display: none; }
+    .documents_block .view_more:hover {
+      border-bottom-color: transparent; }
+    @media all and (max-width: 767px) {
+      .documents_block .view_more {
+        display: inline-block; } }
+    .documents_block .view_more.active::after {
+      -webkit-transform: translateX(-50%) rotate(135deg);
+      -moz-transform: translateX(-50%) rotate(135deg);
+      transform: translateX(-50%) rotate(135deg); }
+    .documents_block .view_more::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -25px;
+      -webkit-transform: translateX(-50%) rotate(-45deg);
+      -moz-transform: translateX(-50%) rotate(-45deg);
+      transform: translateX(-50%) rotate(-45deg);
+      width: 15px;
+      height: 15px;
+      background: transparent;
+      outline: none;
+      border: none;
+      border-left: 4px solid #fd9a0d;
+      border-bottom: 4px solid #fd9a0d;
+      z-index: 10; }
+
+.document_item {
+  width: 33.3%;
+  margin-bottom: 25px;
+  outline: none;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Proxima Nova Rg";
+  color: #263846; }
+  @media all and (max-width: 1024px) {
+    .document_item {
+      width: 50%; } }
+  @media all and (max-width: 767px) {
+    .document_item {
+      width: 100%; }
+      .document_item:nth-child(n+4) {
+        display: none; } }
+  .document_item::before {
+    content: '';
+    display: block;
+    float: left;
+    margin-right: 15px; }
+  .document_item span {
+    display: block;
+    color: inherit;
+    margin-bottom: 5px;
+    font-size: 12px; }
+
+.document_name {
+  margin: 0 0 5px;
+  font-weight: 400;
+  color: #6e849c;
+  font-size: 14px;
+  text-decoration: underline; }
+
+.video_container {
+  background: #f2f2f2;
+  padding: 45px 0; }
+  @media all and (max-width: 767px) {
+    .video_container {
+      padding: 25px 0; }
+      .video_container .video_title {
+        margin-left: 25px;
+        margin-bottom: 25px; }
+      .video_container .container {
+        padding: 0; }
+      .video_container .video_block {
+        margin: auto; }
+      .video_container .video_name {
+        display: none; } }
+
+.video_title {
+  margin-bottom: 60px; }
+
+.video_block {
+  -moz-box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.2);
+  max-width: 765px;
+  margin: 0 auto 25px; }
+
+.video_name {
+  margin: 0;
+  text-align: center;
+  font-family: "Proxima Nova Rg";
+  font-size: 18px;
+  color: #263846; }
+
+.main_form_container {
+  background: #859cb5;
+  padding: 60px 0 35px; }
+
+.main_form_title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 45px; }
+
+.main_form {
+  width: 100%;
+  max-width: 795px;
+  margin: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  justify-content: space-between; }
+
+.main_form_input {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  font-family: "Proxima Nova Rg";
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  outline: none; }
+  .main_form_input::-webkit-input-placeholder {
+    color: #a4b4c5; }
+  .main_form_input::-moz-placeholder {
+    color: #a4b4c5; }
+  .main_form_input:-moz-placeholder {
+    color: #a4b4c5; }
+  .main_form_input:-ms-input-placeholder {
+    color: #a4b4c5; }
+  .main_form_input.submit {
+    border-color: #fd9a0d;
+    background: #fd9a0d;
+    text-align: center;
+    -moz-transition: all linear 0.1s;
+    transition: all linear 0.1s; }
+    .main_form_input.submit:hover {
+      background: #ef8d02; }
+
+.main_form_row {
+  width: 100%; }
+
+.main_form_check {
+  display: none; }
+  .main_form_check:checked + .main_form_label::before {
+    background: #fd9a0d;
+    border-color: #fd9a0d; }
+
+.main_form_label {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  font-family: "Proxima Nova Rg";
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 50px; }
+  .main_form_label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    margin-right: 10px; }

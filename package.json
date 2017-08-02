@@ -1,0 +1,30 @@
+{
+  "name": "crystal",
+  "version": "0.0.0",
+  "description": "1) npm install - установить все npm пакеты и зависимости докально 2) gulp default - запуск gulp 3) gulp watch - для динамического изменения проекта",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-watch": "^4.3.11",
+    "gulp.spritesmith": "^6.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyxobeu/crystal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyxobeu/crystal/issues"
+  },
+  "homepage": "https://github.com/cyxobeu/crystal#readme"
+}
