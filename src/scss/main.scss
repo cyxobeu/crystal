@@ -208,11 +208,23 @@ body {
     @extend .icon-slider_arrow;
 
     &.slick-prev {
+      left: 10%;
       transform: translateY(-50%) rotate(180deg);
+
+      @include big_phone {
+        left: 15px;
+        transform: scale(0.6) translateY(-50%) rotate(180deg);
+      }
     }
 
     &.slick-next {
+      transform: translateY(-50%);
       right: 10%;
+
+      @include big_phone {
+        right: 15px;
+        transform: scale(0.6) translateY(-50%);
+      }
     }
   }
 }
@@ -647,7 +659,8 @@ body {
   padding: 45px 0;
 
   @include big_phone {
-    padding: 25px 0;
+    padding: 30px 0;
+    background: #fff;
 
     .video_title {
       margin-left: 25px;
@@ -685,6 +698,10 @@ body {
 .main_form_container {
   background: $blue_back;
   padding: 60px 0 35px;
+
+  @include big_phone {
+    padding: 20px 0;
+  }
 }
 
 .main_form_title {
@@ -692,6 +709,10 @@ body {
   color: #fff;
   text-align: center;
   margin-bottom: 45px;
+
+  @include phone {
+    margin-bottom: 20px;
+  }
 }
 
 .main_form {
@@ -701,6 +722,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include tablet {
+    max-width: 350px;
+    flex-direction: column;
+  }
+
+  @include phone { max-width: 250px; }
 }
 
 .main_form_input {
@@ -715,6 +743,11 @@ body {
   border: 1px solid #fff;
   color: #fff;
   outline: none;
+
+  @include tablet {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
 
   @include placeholder(#a4b4c5);
 
@@ -752,6 +785,11 @@ body {
   cursor: pointer;
   margin-top: 50px;
 
+  @include tablet {
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -759,5 +797,267 @@ body {
     height: 20px;
     border: 1px solid #fff;
     margin-right: 10px;
+    min-width: 20px;
+  }
+}
+
+// ___________PAY________________
+.pay_container {
+  background: $grey_back;
+  padding: 50px 0 80px;
+
+  @include big_phone {
+    padding: 30px 0 50px;
+  }
+}
+
+.pay_title {
+  @extend .status_title;
+  margin-bottom: 40px;
+
+  @include big_phone {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+// ___________TENDER_____________
+.tender_container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  .slick-arrow {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    outline: none;
+    padding: 0;
+    @extend .icon-slider_arrow;
+
+    &.slick-prev {
+      left: 10%;
+      transform: translateY(-50%) rotate(180deg);
+
+      @include big_phone {
+        left: 15px;
+        transform: scale(0.6) translateY(-50%) rotate(180deg);
+      }
+    }
+
+    &.slick-next {
+      transform: translateY(-50%);
+      right: 10%;
+
+      @include big_phone {
+        right: 15px;
+        transform: scale(0.6) translateY(-50%);
+      }
+    }
+  }
+}
+
+.tender_item {
+  position: relative;
+  float: left;
+}
+
+.tender_img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tender_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  font-family: $bebas;
+  font-size: 58px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 10px 30px;
+  background: $orange;
+
+  @include big_phone {
+    font-size: 36px;
+    padding: 5px 15px;
+  }
+}
+
+// ___________REVIEWS____________
+.reviews_container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+
+  @include big_phone {
+    .container { padding: 0; }
+  }
+}
+
+.reviews_title {
+  @extend .status_title;
+  margin-bottom: 25px;
+
+  @include big_phone {
+    margin-left: 25px;
+    margin-bottom: 15px;
+  }
+}
+
+.reviews_block {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  .slick-list,
+  .slick-track {
+    width: 100%;
+  }
+
+  .slick-track {
+    display: flex;
+
+    @include big_phone { align-items: flex-start; }
+  }
+
+  .slick-dots {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+
+    .slick-active button { background: $blue_back; }
+
+    button {
+      outline: none;
+      font-size: 0;
+      background: #fff;
+      border: 1px solid lightgray;
+      padding: 0;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      margin: 0 3px;
+
+      &:hover { background: $blue_back; }
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    z-index: 99;
+    top: calc(50% - 110px);
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    outline: none;
+    padding: 0;
+    @extend .icon-slider_arrow;
+
+    &.slick-prev {
+      left: 15px;
+      transform: scale(0.6) rotate(180deg);
+    }
+
+    &.slick-next {
+      transform: scale(0.6) ;
+      right: 15px;
+    }
+  }
+}
+
+.reviews_item {
+  outline: none;
+  float: left;
+  width: 48%;
+  padding: 0 12px;
+  margin-bottom: 40px;
+
+  @include big_phone {
+    padding: 0;
+  }
+}
+
+.review_text_block {
+  position: relative;
+  width: 100%;
+  border: 1px solid lightgray;
+  padding: 50px 45px;
+  height: calc(100% - 105px);
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    padding: 30px;
+
+    @include big_phone {
+      padding: 30px 50px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 65px;
+    display: block;
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+  }
+}
+
+.review_text {
+  margin: 0;
+  font-family: $pnr;
+  font-size: 18px;
+  line-height: 26px;
+  color: $blue_dark;
+  text-align: center;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.review_author_block {
+  margin: 45px 0 0 45px;
+  display: flex;
+  align-items: center;
+}
+
+.review_author_img {
+  display: block;
+  width: 65px;
+  height: 65px;
+  margin-right: 15px;
+}
+
+.review_author {
+  margin: 0;
+  font-family: $pnr;
+  font-size: 18px;
+  color: $blue_dark;
+
+  .author_description {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
   }
 }

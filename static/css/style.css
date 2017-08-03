@@ -265,7 +265,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 45px;
   height: 60px; }
 
-.icon-slider_arrow, .main_slider_block .slick-arrow {
+.icon-slider_arrow, .main_slider_block .slick-arrow, .tender_container .slick-arrow, .reviews_block .slick-arrow {
   background-image: url(../img/sprite.png);
   background-position: -26px -100px;
   width: 26px;
@@ -484,11 +484,27 @@ body {
     outline: none;
     padding: 0; }
     .main_slider_block .slick-arrow.slick-prev {
+      left: 10%;
       -webkit-transform: translateY(-50%) rotate(180deg);
       -moz-transform: translateY(-50%) rotate(180deg);
       transform: translateY(-50%) rotate(180deg); }
+      @media all and (max-width: 767px) {
+        .main_slider_block .slick-arrow.slick-prev {
+          left: 15px;
+          -webkit-transform: scale(0.6) translateY(-50%) rotate(180deg);
+          -moz-transform: scale(0.6) translateY(-50%) rotate(180deg);
+          transform: scale(0.6) translateY(-50%) rotate(180deg); } }
     .main_slider_block .slick-arrow.slick-next {
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      transform: translateY(-50%);
       right: 10%; }
+      @media all and (max-width: 767px) {
+        .main_slider_block .slick-arrow.slick-next {
+          right: 15px;
+          -webkit-transform: scale(0.6) translateY(-50%);
+          -moz-transform: scale(0.6) translateY(-50%);
+          transform: scale(0.6) translateY(-50%); } }
 
 .main_slider_item {
   position: relative;
@@ -726,7 +742,7 @@ body {
   justify-content: space-between;
   margin-bottom: 45px; }
 
-.status_title, .status_main_title, .map_title, .documents_title, .video_title, .main_form_title {
+.status_title, .status_main_title, .map_title, .documents_title, .video_title, .main_form_title, .pay_title, .reviews_title {
   font-family: "Bebas Neue";
   font-size: 42px;
   color: #263846;
@@ -868,7 +884,8 @@ body {
   padding: 45px 0; }
   @media all and (max-width: 767px) {
     .video_container {
-      padding: 25px 0; }
+      padding: 30px 0;
+      background: #fff; }
       .video_container .video_title {
         margin-left: 25px;
         margin-bottom: 25px; }
@@ -898,11 +915,17 @@ body {
 .main_form_container {
   background: #859cb5;
   padding: 60px 0 35px; }
+  @media all and (max-width: 767px) {
+    .main_form_container {
+      padding: 20px 0; } }
 
 .main_form_title {
   color: #fff;
   text-align: center;
   margin-bottom: 45px; }
+  @media all and (max-width: 479px) {
+    .main_form_title {
+      margin-bottom: 20px; } }
 
 .main_form {
   width: 100%;
@@ -915,6 +938,17 @@ body {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   justify-content: space-between; }
+  @media all and (max-width: 1024px) {
+    .main_form {
+      max-width: 350px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -moz-box-orient: vertical;
+      -moz-box-direction: normal;
+      flex-direction: column; } }
+  @media all and (max-width: 479px) {
+    .main_form {
+      max-width: 250px; } }
 
 .main_form_input {
   display: block;
@@ -928,6 +962,10 @@ body {
   border: 1px solid #fff;
   color: #fff;
   outline: none; }
+  @media all and (max-width: 1024px) {
+    .main_form_input {
+      max-width: 100%;
+      margin-bottom: 15px; } }
   .main_form_input::-webkit-input-placeholder {
     color: #a4b4c5; }
   .main_form_input::-moz-placeholder {
@@ -970,10 +1008,259 @@ body {
   color: #fff;
   cursor: pointer;
   margin-top: 50px; }
+  @media all and (max-width: 1024px) {
+    .main_form_label {
+      margin-top: 0;
+      -webkit-box-align: start;
+      -moz-box-align: start;
+      align-items: flex-start; } }
   .main_form_label::before {
     content: '';
     display: block;
     width: 20px;
     height: 20px;
     border: 1px solid #fff;
-    margin-right: 10px; }
+    margin-right: 10px;
+    min-width: 20px; }
+
+.pay_container {
+  background: #f2f2f2;
+  padding: 50px 0 80px; }
+  @media all and (max-width: 767px) {
+    .pay_container {
+      padding: 30px 0 50px; } }
+
+.pay_title {
+  margin-bottom: 40px; }
+  @media all and (max-width: 767px) {
+    .pay_title {
+      text-align: center;
+      margin-bottom: 20px; } }
+
+.tender_container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px; }
+  .tender_container .slick-arrow {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    outline: none;
+    padding: 0; }
+    .tender_container .slick-arrow.slick-prev {
+      left: 10%;
+      -webkit-transform: translateY(-50%) rotate(180deg);
+      -moz-transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-50%) rotate(180deg); }
+      @media all and (max-width: 767px) {
+        .tender_container .slick-arrow.slick-prev {
+          left: 15px;
+          -webkit-transform: scale(0.6) translateY(-50%) rotate(180deg);
+          -moz-transform: scale(0.6) translateY(-50%) rotate(180deg);
+          transform: scale(0.6) translateY(-50%) rotate(180deg); } }
+    .tender_container .slick-arrow.slick-next {
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 10%; }
+      @media all and (max-width: 767px) {
+        .tender_container .slick-arrow.slick-next {
+          right: 15px;
+          -webkit-transform: scale(0.6) translateY(-50%);
+          -moz-transform: scale(0.6) translateY(-50%);
+          transform: scale(0.6) translateY(-50%); } }
+
+.tender_item {
+  position: relative;
+  float: left; }
+
+.tender_img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.tender_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  font-family: "Bebas Neue";
+  font-size: 58px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 10px 30px;
+  background: #fd9a0d; }
+  @media all and (max-width: 767px) {
+    .tender_text {
+      font-size: 36px;
+      padding: 5px 15px; } }
+
+.reviews_container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px; }
+  @media all and (max-width: 767px) {
+    .reviews_container .container {
+      padding: 0; } }
+
+.reviews_title {
+  margin-bottom: 25px; }
+  @media all and (max-width: 767px) {
+    .reviews_title {
+      margin-left: 25px;
+      margin-bottom: 15px; } }
+
+.reviews_block {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden; }
+  .reviews_block .slick-list,
+  .reviews_block .slick-track {
+    width: 100%; }
+  .reviews_block .slick-track {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex; }
+    @media all and (max-width: 767px) {
+      .reviews_block .slick-track {
+        -webkit-box-align: start;
+        -moz-box-align: start;
+        align-items: flex-start; } }
+  .reviews_block .slick-dots {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    justify-content: center; }
+    .reviews_block .slick-dots .slick-active button {
+      background: #859cb5; }
+    .reviews_block .slick-dots button {
+      outline: none;
+      font-size: 0;
+      background: #fff;
+      border: 1px solid lightgray;
+      padding: 0;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      margin: 0 3px; }
+      .reviews_block .slick-dots button:hover {
+        background: #859cb5; }
+  .reviews_block .slick-arrow {
+    position: absolute;
+    z-index: 99;
+    top: -moz-calc(50% - 110px);
+    top: calc(50% - 110px);
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    outline: none;
+    padding: 0; }
+    .reviews_block .slick-arrow.slick-prev {
+      left: 15px;
+      -webkit-transform: scale(0.6) rotate(180deg);
+      -moz-transform: scale(0.6) rotate(180deg);
+      transform: scale(0.6) rotate(180deg); }
+    .reviews_block .slick-arrow.slick-next {
+      -webkit-transform: scale(0.6);
+      -moz-transform: scale(0.6);
+      transform: scale(0.6);
+      right: 15px; }
+
+.reviews_item {
+  outline: none;
+  float: left;
+  width: 48%;
+  padding: 0 12px;
+  margin-bottom: 40px; }
+  @media all and (max-width: 767px) {
+    .reviews_item {
+      padding: 0; } }
+
+.review_text_block {
+  position: relative;
+  width: 100%;
+  border: 1px solid lightgray;
+  padding: 50px 45px;
+  height: -moz-calc(100% - 105px);
+  height: calc(100% - 105px);
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  align-items: center; }
+  @media all and (max-width: 1024px) {
+    .review_text_block {
+      padding: 30px; } }
+  @media all and (max-width: 1024px) and (max-width: 767px) {
+    .review_text_block {
+      padding: 30px 50px; } }
+  .review_text_block::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 65px;
+    display: block;
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray; }
+
+.review_text {
+  margin: 0;
+  font-family: "Proxima Nova Rg";
+  font-size: 18px;
+  line-height: 26px;
+  color: #263846;
+  text-align: center; }
+  @media all and (max-width: 1024px) {
+    .review_text {
+      font-size: 14px;
+      line-height: 18px; } }
+
+.review_author_block {
+  margin: 45px 0 0 45px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  align-items: center; }
+
+.review_author_img {
+  display: block;
+  width: 65px;
+  height: 65px;
+  margin-right: 15px; }
+
+.review_author {
+  margin: 0;
+  font-family: "Proxima Nova Rg";
+  font-size: 18px;
+  color: #263846; }
+  .review_author .author_description {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px; }

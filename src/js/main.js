@@ -55,6 +55,36 @@ $(document).ready(function () {
     }
 
     $(this).closest('.documents_block').toggleClass('active');
-  })
+  });
+
+  $('.tender_container').slick({
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: false,
+    fade: false
+  });
+
+  $('.reviews_block').slick({
+    autoplay: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    infinite: true,
+    dots: true,
+    fade: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: true
+        }
+      }
+    ]
+  });
 });
 
