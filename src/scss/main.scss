@@ -22,6 +22,14 @@ body {
 .complexes_container {
   background-color: $grey_back;
 
+  &.bottom {
+    background-color: #fff;
+
+    .complexes_block { padding: 7px 0 15px; }
+
+    .complexes_item.active::after { top: -16px; }
+  }
+
   @include big_phone {
     display: none;
   }
@@ -62,7 +70,16 @@ body {
   }
 }
 
+.main_header_container {
+  position: relative;
+
+  .container {
+    @include big_phone { padding: 0; }
+  }
+}
+
 .main_header_block {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -72,6 +89,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0;
   }
 }
 
@@ -80,6 +98,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 42px;
   width: 42px;
   height: 42px;
   border: 1px solid $orange;
@@ -87,12 +106,26 @@ body {
   margin-right: 30px;
   margin-top: 10px;
 
+  &.active {
+    .line {
+      &:first-child { transform: translateY(3px) rotate(-45deg); }
+      &:nth-child(2) { display: none; }
+      &:last-child { transform: translateY(-3px) rotate(45deg); }
+    }
+  }
+
+  @include big_phone {
+    margin-right: 0;
+    margin-left: 15px;
+  }
+
   .line {
     display: block;
     width: 25px;
     height: 3px;
     background-color: $orange;
     margin-bottom: 3px;
+    transition: all linear 0.1s;
 
     &:last-child { margin-bottom: 0; }
   }
@@ -101,6 +134,8 @@ body {
 .logo {
   display: block;
   margin-right: 50px;
+
+  @include big_phone { margin-right: 0; }
 }
 
 .menu {
@@ -111,10 +146,16 @@ body {
   &.active .menu_item:nth-child(n+7) { display: inline-block; }
 
   @include big_phone {
+    position: absolute;
+    top: 100%;
+    z-index: 150;
+    left: 0;
     width: 100%;
     order: 4;
     display: none;
     background: $grey_back;
+    margin-top: 0;
+    padding: 20px 0 20px 40px;
 
     &.active {
       display: flex;
@@ -135,6 +176,16 @@ body {
   margin-bottom: 10px;
   transition: all linear 0.3s;
 
+  @include small_desktop {
+    font-size: 14px;
+    margin-right: 15px;
+  }
+
+  @include big_phone {
+    font-size: 20px;
+    margin-right: 0;
+  }
+
   &:nth-child(n+7) {
     display: none;
   }
@@ -149,6 +200,13 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: auto;
+  min-width: 140px;
+
+  @include big_phone {
+    min-width: 110px;
+    margin-left: 0;
+    margin-right: 15px;
+  }
 }
 
 .phone_tel {
@@ -157,15 +215,24 @@ body {
   color: #000;
   margin-bottom: 5px;
 
+  @include big_phone {
+    .city_code { font-size: 11px; }
+    .number { font-size: 18px; }
+  }
+
   .city_code {
     font-family: $pnr;
     font-size: 13px;
     padding-left: 3px;
+
+    @include big_phone { font-size: 11px; }
   }
 
   .number {
     font-family: $pnb;
     font-size: 24px;
+
+    @include big_phone { font-size: 18px; }
   }
 }
 
@@ -179,6 +246,8 @@ body {
   padding: 7px 15px;
   border: 1px solid $orange;
   transition: all linear 0.1s;
+
+  @include big_phone { font-size: 9px; }
 
   &:hover {
     background-color: $orange;
@@ -208,10 +277,10 @@ body {
     @extend .icon-slider_arrow;
 
     &.slick-prev {
-      left: 10%;
+      left: 7%;
       transform: translateY(-50%) rotate(180deg);
 
-      @include big_phone {
+      @include tablet {
         left: 15px;
         transform: scale(0.6) translateY(-50%) rotate(180deg);
       }
@@ -219,9 +288,9 @@ body {
 
     &.slick-next {
       transform: translateY(-50%);
-      right: 10%;
+      right: 7%;
 
-      @include big_phone {
+      @include tablet {
         right: 15px;
         transform: scale(0.6) translateY(-50%);
       }
@@ -229,16 +298,24 @@ body {
   }
 }
 
-.main_slider_item {
-  position: relative;
-  float: left;
-  width: 100%;
-}
-
 .main_slider_text {
   position: absolute;
   top: 45px;
-  left: 0;
+  left: 12%;
+  right: 0;
+  z-index: 99;
+  max-width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include tablet {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 
   .done {
     display: inline-block;
@@ -247,6 +324,8 @@ body {
     color: #fff;
     padding: 10px 35px;
     background: $orange;
+
+    @include big_phone { padding: 10px 15px; }
   }
 }
 
@@ -258,24 +337,32 @@ body {
   margin: 0;
   padding: 10px 30px;
   background: rgba(133, 156, 181, 0.7);
-}
 
-.main_slider_link {
-  color: inherit;
-  outline: none;
-
-  &:hover { text-decoration: none; }
+  @include tablet {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 30px;
+  }
 }
 
 .slider_img {
+  float: left;
   display: block;
   width: 100%;
   height: auto;
+
+  @include big_phone {
+    min-height: 275px;
+    object-fit: cover;
+  }
 }
 
 .main_slider_navigation {
   position: absolute;
-  width: 100%;
   max-width: 420px;
   left: 50%;
   bottom: 30px;
@@ -283,21 +370,50 @@ body {
   display: flex;
   justify-content: center;
 
+  @include phone {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateX(0);
+  }
+
   .slick-track {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+
+    @include phone {
+      padding: 0;
+    }
   }
 }
 
 .main_slider_navigation_item {
   position: relative;
+  min-width: 88px;
   margin: 0 10px;
-  width: 88px !important;
   border: 4px solid #fff;
   cursor: pointer;
 
   &:hover { box-shadow: 0 0 0 3px #fff; }
+
+  @include phone {
+    border: 0;
+    margin: 0;
+    //box-shadow: inset 0 0 0 50px rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &.slick-current {
+      box-shadow: none;
+      &::before { display: none; }
+    }
+  }
 
   &.slick-current {
     outline: none;
@@ -320,9 +436,10 @@ body {
 
 .main_slider_navigation_img {
   display: block;
-  min-width: 80px;
   width: 100%;
   height: auto;
+
+  box-shadow: inset 0 0 0 50px rgba(255, 255, 255, 0.5);
 }
 
 // ________INFORMATION___________
@@ -330,23 +447,40 @@ body {
   background: $orange;
   padding: 35px 0;
   margin-bottom: 65px;
+
+  @include tablet {
+    padding: 35px 0 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .informations_block {
   width: 100%;
   display: flex;
-  //flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
 
+  @include tablet {
+    justify-content: space-around;
+  }
+
   @include big_phone {
-    //flex-direction: column;
-    //align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 .information_cell {
   display: flex;
   align-items: flex-start;
+
+  @include tablet {
+    margin-bottom: 15px;
+  }
+
+  @include big_phone {
+    margin-left: 20px;
+  }
 
   @each $i in ['adress', 'company', 'date', 'cost', 'build'] {
     &.#{$i} .information_icon {
@@ -366,6 +500,10 @@ body {
   color: #fff;
   margin-top: 3px;
 
+  @include tablet {
+    font-size: 14px;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -376,6 +514,8 @@ body {
 // ________ABOUT___________
 .about_container {
   margin-bottom: 75px;
+
+  @include big_phone { margin-bottom: 30px; }
 }
 
 .about_block {
@@ -390,6 +530,11 @@ body {
   color: $blue_dark;
   text-transform: uppercase;
   margin: 0 0 30px;
+
+  @include big_phone {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
 }
 
 .about_text {
@@ -402,6 +547,12 @@ body {
   margin: 0;
   margin-right: auto;
   max-height: 100%;
+
+  @include big_phone {
+    font-size: 16px;
+    margin-left: 20px;
+    line-height: 1.4;
+  }
 
   &.big {
     max-height: 190px;
@@ -457,6 +608,8 @@ body {
   font-size: 26px;
   line-height: 30px;
   max-width: 290px;
+
+  @include tablet { display: none; }
 }
 
 // ________PLANS____________
@@ -474,16 +627,206 @@ body {
   margin: 0 0 35px;
 }
 
+.plans_buttons_block {
+  max-width: 910px;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.plans_button {
+  position: relative;
+  width: 20%;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  font-family: $pnr;
+  font-size: 16px;
+  padding: 15px 0;
+  color: #000;
+  background: #fff;
+  margin-right: 2px;
+  transition: all linear 0.1s;
+
+  &:hover {
+    background: $orange;
+    color: #fff;
+  }
+
+  &.active {
+    background: $blue_back;
+    color: #fff;
+  }
+
+  &.floor {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      @extend .icon-floor;
+    }
+  }
+}
+
+.plans_content_block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plans_content_cell {
+  width: 25%;
+  max-width: 263px;
+  margin: 0 30px 20px 0;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  padding: 30px 30px 25px;
+
+  &:nth-child(4n) { margin-right: 0; }
+
+  .view_more {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    display: block;
+    font-family: $pnr;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid $orange;
+    padding: 12px 0;
+    color: #000;
+    margin-top: 20px;
+    transition: all linear 0.1s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid $orange;
+      border-right: 2px solid $orange;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      background: $orange;
+      color: #fff;
+
+      &::after { border-color: #fff; }
+    }
+  }
+}
+
+.apartment_title {
+  width: 100%;
+  margin: 0 0 25px;
+  font-family: $pnr;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.apartment_img_block {
+  width: 100%;
+}
+
+.main_img_block {
+  margin-bottom: 25px;
+
+  .big_img {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    outline: none;
+  }
+}
+
+.navigation_img_block {
+  width: 100%;
+
+  display: none;
+}
+
+.apartment_cost {
+  display: block;
+  font-family: $bebas;
+  font-size: 34px;
+  text-transform: uppercase;
+  color: $blue_dark;
+  margin-bottom: 5px;
+}
+
+.apartment_size {
+  display: block;
+  font-family: $pnr;
+  margin-bottom: 10px;
+}
+
+.apartment_form {
+  display: none;
+}
+
+.apartment_form_title {
+  font-family: $bebas;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: $blue_dark;
+  margin: 0 0 15px;
+}
+
+.apartment_input {
+  display: block;
+  width: 100%;
+  font-family: $pnr;
+  font-size: 13px;
+  text-transform: uppercase;
+  outline: none;
+  padding: 15px;
+  padding-right: 0;
+  border: 1px solid $grey_back;
+  background: #fff;
+  color: $blue_dark;
+  margin-bottom: 10px;
+
+  @include placeholder($blue_back);
+
+  &.submit {
+    border: none;
+    background: $orange;
+    font-size: 17px;
+    color: #fff;
+    padding: 12px 0;
+
+    &:hover { background: darken($orange, 5%); }
+  }
+}
+
+
+
 // ________STATUS____________
 .status_container {
   margin-bottom: 100px;
+
+  .container {
+    @include big_phone {
+      padding: 0;
+    }
+  }
 }
 
 .status_header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 45px;
+
+  @include tablet {
+    justify-content: center;
+  }
 }
 
 .status_title {
@@ -492,12 +835,16 @@ body {
   color: $blue_dark;
   text-transform: uppercase;
   margin: 0;
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
 }
 
 .status_graph {
   position: relative;
   display: block;
-  width: 100%;
+  width: 65%;
   max-width: 775px;
   height: 55px;
   background: $blue_back;
@@ -509,6 +856,13 @@ body {
     left: 30%;
     top: -40px;
     @extend .icon-status_icon;
+  }
+
+  @include tablet {
+    width: 100%;
+    max-width: 100%;
+
+    &::after { display: none; }
   }
 }
 
@@ -531,6 +885,11 @@ body {
   text-transform: uppercase;
   color: #fff;
   z-index: 20;
+
+  @include phone {
+    left: 10%;
+    transform: translate(0, -50%);
+  }
 }
 
 .status_main {
@@ -1059,5 +1418,163 @@ body {
     display: block;
     margin-top: 3px;
     font-size: 12px;
+  }
+}
+
+// ____________FOOTER______________
+.footer {
+  background-color: $grey_back;
+}
+
+.main_footer_container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0;
+
+  @include big_phone {
+    flex-wrap: wrap;
+    padding-left: 20px;
+  }
+}
+
+.footer_logo {
+  display: block;
+  margin-right: 30px;
+}
+
+.footer_social_block {
+  margin-right: 120px;
+
+  @include big_phone {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.footer_copyright {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-family: $pnr;
+  font-size: 12px;
+
+  @include big_phone { margin-bottom: 5px; }
+}
+
+.footer_social_links {
+  display: flex;
+  margin-bottom: 15px;
+
+  @include big_phone { margin-bottom: 5px; }
+}
+
+.footer_social_link {
+  display: block;
+  outline: none;
+  margin-right: 10px;
+
+  &:hover { opacity: 0.8; }
+
+  @each $i in ['facebook', 'vk', 'odnoklassniki', 'instagram'] {
+    &.#{$i} { @extend .icon-#{$i}; }
+  }
+}
+
+.footer_subscribe {
+  font-family: $pnr;
+}
+
+.footer_contacts {
+  @include big_phone {
+    width: 100%;
+  }
+}
+
+.footer_tel {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer_contact_row {
+  margin: 0 0 8px;
+  font-family: $pnr;
+}
+
+.footer_contact_label {
+  font-family: $pnb;
+  padding-right: 3px;
+
+  @include big_phone {
+    &.office { display: block; }
+  }
+}
+
+.footer_contact_link,
+.create_site_link {
+  font-family: $pnr;
+  color: $blue_font;
+}
+
+.create_site {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  @include big_phone {
+    display: none;
+  }
+}
+
+.create_site_label {
+  font-family: $pnb;
+  margin-bottom: 5px;
+}
+
+.footer_anchor {
+  position: absolute;
+  right: 0;
+  top: -50px;
+  outline: none;
+  text-decoration: none;
+  padding: 10px 25px 10px 45px;
+  background-color: $grey_back;
+  font-family: $pnb;
+  color: #000;
+  text-transform: uppercase;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: $orange;
+    color: #fff;
+
+    &::before { border-color: #fff; }
+  }
+
+  @include big_phone {
+    top: -37px;
+    left: 0;
+    right: auto;
+
+    &:hover {
+      background-color: $grey_back;
+      color: #000;
+
+      &::before { border-color: $orange; }
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid $orange;
+    border-left: 3px solid $orange;
+    transform: rotate(45deg);
   }
 }

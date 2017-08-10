@@ -33,17 +33,17 @@
           </a>
           <img src="/static/img/logo.png" alt="logo" class="logo">
           <nav class="menu">
-            <a href="" class="menu_item">О проекте</a>
-            <a href="" class="menu_item">Цены</a>
-            <a href="" class="menu_item">Как купить?</a>
-            <a href="" class="menu_item">Ход строительства</a>
-            <a href="" class="menu_item">Контакты</a>
-            <a href="" class="menu_item">На карте</a>
-            <a href="" class="menu_item">Видео о проекте</a>
-            <a href="" class="menu_item">Документы</a>
-            <a href="" class="menu_item">Отзывы</a>
-            <a href="" class="menu_item">Способы оплаты</a>
-            <a href="" class="menu_item">Акции</a>
+            <a href="#about" class="menu_item">О проекте</a>
+            <a href="#plans" class="menu_item">Цены</a>
+            <a href="#pay" class="menu_item">Как купить?</a>
+            <a href="#status" class="menu_item">Ход строительства</a>
+            <a href="#contacts" class="menu_item">Контакты</a>
+            <a href="#maps" class="menu_item">На карте</a>
+            <a href="#video" class="menu_item">Видео о проекте</a>
+            <a href="#documents" class="menu_item">Документы</a>
+            <a href="#reviews" class="menu_item">Отзывы</a>
+            <a href="#pay" class="menu_item">Способы оплаты</a>
+            <a href="#tenders" class="menu_item">Акции</a>
           </nav>
           <div class="phone_block">
             <a href="" class="phone_tel"><span class="city_code">+7 8172</span><span class="number">50-13-10</span>
@@ -57,25 +57,13 @@
 
   <main class="main">
     <section class="main_slider_container">
+      <div class="main_slider_text">
+        <h1 class="main_slider_title">ЖК «Кристалл» в Вологде</h1>
+        <span class="done">Дом сдан!</span>
+      </div>
       <div class="main_slider_block">
-        <div class="main_slider_item">
-          <img src="/static/img/slider.jpg" alt="" class="slider_img">
-          <div class="main_slider_text">
-            <h2 class="main_slider_title">ЖК «Кристалл» в
-              <a href="#" class="main_slider_link">Вологде</a>
-            </h2>
-            <span class="done">Дом сдан!</span>
-          </div>
-        </div>
-        <div class="main_slider_item">
-          <img src="/static/img/slider.jpg" alt="" class="slider_img">
-          <div class="main_slider_text">
-            <h2 class="main_slider_title">ЖК «Кристалл» в
-              <a href="#" class="main_slider_link">Вологде</a>
-            </h2>
-            <span class="done">Дом сдан!</span>
-          </div>
-        </div>
+        <img src="/static/img/slider.jpg" alt="" class="slider_img">
+        <img src="/static/img/slider.jpg" alt="" class="slider_img">
       </div>
       <div class="main_slider_navigation">
         <div class="main_slider_navigation_item">
@@ -117,7 +105,7 @@
       </div>
     </section>
 
-    <section class="about_container">
+    <section id="about" class="about_container">
       <div class="container">
         <div class="about_block">
           <h2 class="about_title">О проекте</h2>
@@ -129,16 +117,83 @@
       </div>
     </section>
 
-    <section class="plans_container">
+    <section id="plans" class="plans_container">
       <div class="container">
         <div class="plans_block">
           <h2 class="plans_title">Планировки и цены</h2>
-          <div class="plans_buttons_block"></div>
+          <div class="plans_buttons_block">
+            <a href="#" class="plans_button active all" data-room-number="all">Все квартиры</a>
+            <a href="#" class="plans_button room" data-room-number="1">Однокомнатная</a>
+            <a href="#" class="plans_button room" data-room-number="2">Двухкомнатная</a>
+            <a href="#" class="plans_button room" data-room-number="3">Трехкомнатная</a>
+            <a href="#" class="plans_button floor" data-room-number="floor">Схема этажа</a>
+          </div>
+
+          <div class="plans_content_block">
+            <div class="plans_content_cell" data-room-number="1">
+              <h3 class="apartment_title">1-комнатная квартира</h3>
+
+              <div class="apartment_img_block">
+                <div class="main_img_block">
+                  <img src="/static/img/room.jpg" alt="" class="big_img">
+                  <img src="/static/img/room.jpg" alt="" class="big_img">
+                </div>
+                <div class="navigation_img_block">
+                  <img src="/static/img/room.jpg" alt="" class="small_img">
+                  <img src="/static/img/room.jpg" alt="" class="small_img">
+                </div>
+              </div>
+
+              <div class="apartment_description">
+                <span class="apartment_cost">2 000 000 Р.</span>
+                <span class="apartment_size">150 м<sup>2</sup></span>
+
+                <form action="" method="POST" class="apartment_form">
+                  <h3 class="apartment_form_title">Оставить заявку</h3>
+                  <input type="text" class="apartment_input" name="name" placeholder="Ваше имя" required>
+                  <input type="tel" class="apartment_input" name="tel" placeholder="Телефон" required>
+                  <input type="email" class="apartment_input" name="email" placeholder="EMAIL" required>
+                  <input type="submit" class="apartment_input submit" value="ЗАПИСАТЬСЯ">
+                </form>
+              </div>
+
+              <a href="#" class="view_more open_popup">Подробнее</a>
+            </div>
+            <div class="plans_content_cell" data-room-number="2">
+              <h3 class="apartment_title">2-комнатная квартира</h3>
+
+              <div class="apartment_img_block">
+                <div class="main_img_block">
+                  <img src="/static/img/room.jpg" alt="" class="big_img">
+                  <img src="/static/img/room.jpg" alt="" class="big_img">
+                </div>
+                <div class="navigation_img_block">
+                  <img src="/static/img/room.jpg" alt="" class="small_img">
+                  <img src="/static/img/room.jpg" alt="" class="small_img">
+                </div>
+              </div>
+
+              <div class="apartment_description">
+                <span class="apartment_cost">2 000 000 Р.</span>
+                <span class="apartment_size">150 м<sup>2</sup></span>
+
+                <form action="" method="POST" class="apartment_form">
+                  <h3 class="apartment_form_title">Оставить заявку</h3>
+                  <input type="text" class="apartment_input" name="name" placeholder="Ваше имя" required>
+                  <input type="tel" class="apartment_input" name="tel" placeholder="Телефон" required>
+                  <input type="email" class="apartment_input" name="email" placeholder="EMAIL" required>
+                  <input type="submit" class="apartment_input submit" value="ЗАПИСАТЬСЯ">
+                </form>
+              </div>
+
+              <a href="#" class="view_more open_popup">Подробнее</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="status_container">
+    <section id="status" class="status_container">
       <div class="container">
         <div class="status_header">
           <h2 class="status_title">ХОД СТРОИТЕЛЬСТВА</h2>
@@ -157,7 +212,7 @@
       </div>
     </section>
 
-    <section class="map_container">
+    <section id="maps" class="map_container">
       <div class="container">
         <h2 class="map_title">КАРТА И ИНФРАСТРУКТУРА</h2>
       </div>
@@ -169,7 +224,7 @@
       </div>
     </section>
 
-    <section class="documents_container">
+    <section id="documents" class="documents_container">
       <div class="container">
         <h2 class="documents_title">ДОКУМЕНТЫ</h2>
         <div class="documents_block">
@@ -198,7 +253,7 @@
       </div>
     </section>
 
-    <section class="video_container">
+    <section id="video" class="video_container">
       <div class="container">
         <h2 class="video_title">ВИДЕО О СТРОИТЕЛЬСТВЕ</h2>
         <div class="video_block">
@@ -223,13 +278,13 @@
       </div>
     </section>
 
-    <section class="pay_container">
+    <section id="pay" class="pay_container">
       <div class="container">
         <h2 class="pay_title">СПОСОБЫ ОПЛАТЫ</h2>
       </div>
     </section>
 
-    <section class="tender_container">
+    <section id="tenders" class="tender_container">
       <div class="tender_item">
         <img src="/static/img/slider.jpg" alt="" class="tender_img">
         <span class="tender_text">Акция 3+2</span>
@@ -240,7 +295,7 @@
       </div>
     </section>
 
-    <section class="reviews_container">
+    <section id="reviews" class="reviews_container">
       <div class="container">
         <h2 class="reviews_title">Отзывы</h2>
 
@@ -296,14 +351,49 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer id="contacts" class="footer">
+    <div class="container">
+      <div class="main_footer_container">
+        <img src="/static/img/logo_bottom.png" alt="logo" class="footer_logo">
+        <div class="footer_social_block">
+          <span class="footer_copyright">© 2017 ЖК «Кристалл»</span>
+          <div class="footer_social_links">
+            <a href="" class="footer_social_link facebook"></a>
+            <a href="" class="footer_social_link vk"></a>
+            <a href="" class="footer_social_link odnoklassniki"></a>
+            <a href="" class="footer_social_link instagram"></a>
+          </div>
+          <span class="footer_subscribe">Подписывайтесь</span>
+        </div>
+        <div class="footer_contacts">
+          <a href="" class="phone_tel footer_tel"><span class="city_code">+7 8172</span><span class="number">50-13-10</span></a>
+          <p class="footer_contact_row"><span class="footer_contact_label office">Отдел продаж:</span>г. Вологда, ул, Мира, 54, оф. 456</p>
+          <p class="footer_contact_row"><span class="footer_contact_label">Застройщик:</span><a href="https://www.zastroyka35.ru" class="footer_contact_link">zastroyka35.ru</a></p>
+        </div>
 
+        <div class="create_site">
+          <span class="create_site_label">Хотите такой же сайт?</span>
+          <a href="https://www.zastroyka35.ru" class="create_site_link">zastroyka35.ru</a>
+        </div>
+
+        <a href="#" class="footer_anchor">Наверх</a>
+      </div>
+    </div>
+
+    <div class="complexes_container bottom">
+      <div class="container">
+        <div class="complexes_block">
+          <a href="" class="complexes_item active">«Новые Ватутинки»</a>
+          <a href="" class="complexes_item">«Новые Ватутинки»</a>
+          <a href="" class="complexes_item">«Новые Ватутинки»</a>
+        </div>
+      </div>
+    </div>
   </footer>
-
-
 
   <script src="static/js/jquery-3.2.1.min.js"></script>
   <script src="static/js/slick.min.js"></script>
+  <script src="static/js/inputmask.min.js"></script>
   <script src="static/js/main.js"></script>
 </body>
 </html>

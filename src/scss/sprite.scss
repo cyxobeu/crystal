@@ -22,6 +22,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 46px;
   height: 60px;
 }
+.icon-facebook {
+  background-image: url(../img/sprite.png);
+  background-position: -72px -60px;
+  width: 30px;
+  height: 30px;
+}
+.icon-floor {
+  background-image: url(../img/sprite.png);
+  background-position: -171px -42px;
+  width: 21px;
+  height: 20px;
+}
 .icon-info_adress {
   background-image: url(../img/sprite.png);
   background-position: 0px -100px;
@@ -52,6 +64,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 41px;
   height: 40px;
 }
+.icon-instagram {
+  background-image: url(../img/sprite.png);
+  background-position: -102px -60px;
+  width: 30px;
+  height: 30px;
+}
+.icon-odnoklassniki {
+  background-image: url(../img/sprite.png);
+  background-position: -41px -60px;
+  width: 31px;
+  height: 30px;
+}
 .icon-pdf {
   background-image: url(../img/sprite.png);
   background-position: -46px 0px;
@@ -69,4 +93,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: -91px 0px;
   width: 47px;
   height: 41px;
+}
+.icon-vk {
+  background-image: url(../img/sprite.png);
+  background-position: -52px -100px;
+  width: 30px;
+  height: 30px;
 }
