@@ -20,7 +20,7 @@ gulp.task('sprite', function () {
     imgName: 'sprite.png',
     cssName: 'sprite.scss',
     cssFormat: 'css',
-    imgPath: '../static/img/sprite.png'
+    imgPath: './static/img/sprite.png'
   }));
   var imgStream = spriteData.img
   .pipe(gulp.dest('./static/img/'));
