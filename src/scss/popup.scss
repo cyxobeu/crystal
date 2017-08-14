@@ -1,0 +1,164 @@
+.popup_overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  background-color: rgba(106,125,145,0.5);
+  opacity: 0;
+  position: fixed;
+  &.active_popup {
+    visibility: visible;
+    opacity: 1;
+    & + .popup_container {
+      top: 48%;
+      transform: translateY(-48%);
+      visibility: visible;
+      opacity: 1;
+      overflow-y: auto;
+      will-change: transform;
+
+      @include tablet {
+        top: 0;
+        width: 100% !important;
+        height: 100%;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.close_popup {
+  @include close(20px,15px,lightgrey);
+}
+
+.popup_container {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  visibility: hidden;
+  margin: 0 auto;
+  position: fixed;
+  width: 740px;
+  background-color: #fff;
+  opacity: 0;
+  transition: top linear 0.2s;
+
+  &.form_popup { width: 950px; }
+}
+
+.popup_content.plans_content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 35px 0;
+
+  .apartment_title {
+    font-family: $bebas;
+    font-size: 42px;
+    color: $blue_dark;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .apartment_img_block {
+    width: 320px;
+    margin-right: 50px;
+  }
+
+  .main_img_block {
+    .big_img {
+      &:nth-child(n+2) { display: block; }
+    }
+  }
+
+  .navigation_img_block { display: flex; }
+
+  .apartment_description { min-width: 230px; }
+
+  .apartment_cost { font-size: 42px; }
+
+  .apartment_size {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+
+  .apartment_form {
+    display: block;
+  }
+
+  .view_more,
+  .arrow {
+    display: none;
+  }
+}
+
+.popup_content.form_content {
+  padding: 50px 140px;
+
+  @include tablet {
+    width: 250px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include big_phone {
+    justify-content: flex-start;
+  }
+
+  .main_form_title {
+    color: $blue_dark;
+  }
+
+  .main_form_input {
+    width: 31%;
+    border: 1px solid $grey_back;
+    padding: 15px;
+    font-size: 13px;
+    color: $blue_dark;
+
+    &.submit {
+      background: #fff;
+      border-color: $orange;
+      color: $blue_dark;
+      font-size: 17px;
+
+      &:hover {
+        background: $orange;
+        color: #fff;
+      }
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  .main_form_label {
+    color: #000;
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+
+    &::before {
+      border-color: $grey_back;
+    }
+  }
+
+  .succes_text {
+    color: $blue_dark;
+  }
+}

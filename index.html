@@ -46,9 +46,9 @@
             <a href="#tenders" class="menu_item">Акции</a>
           </nav>
           <div class="phone_block">
-            <a href="" class="phone_tel"><span class="city_code">+7 8172</span><span class="number">50-13-10</span>
+            <a href="tel:88172501310" class="phone_tel"><span class="city_code">+7 8172</span><span class="number">50-13-10</span>
             </a>
-            <a href="" class="open_popup phone_button">перезвонить мне</a>
+            <a href="#form_popup" class="open_popup phone_button">перезвонить мне</a>
           </div>
         </div>
       </div>
@@ -154,10 +154,11 @@
                   <input type="tel" class="apartment_input" name="tel" placeholder="Телефон" required>
                   <input type="email" class="apartment_input" name="email" placeholder="EMAIL" required>
                   <input type="submit" class="apartment_input submit" value="ЗАПИСАТЬСЯ">
+                  <span class="arrow"></span>
                 </form>
               </div>
 
-              <a href="#" class="view_more open_popup">Подробнее</a>
+              <a href="#plans_popup" class="view_more open_popup">Подробнее</a>
             </div>
             <div class="plans_content_cell" data-room-number="2">
               <h3 class="apartment_title">2-комнатная квартира</h3>
@@ -165,11 +166,10 @@
               <div class="apartment_img_block">
                 <div class="main_img_block">
                   <img src="/static/img/room.jpg" alt="" class="big_img">
-                  <img src="/static/img/room.jpg" alt="" class="big_img">
                 </div>
                 <div class="navigation_img_block">
                   <img src="/static/img/room.jpg" alt="" class="small_img">
-                  <img src="/static/img/room.jpg" alt="" class="small_img">
+                  <img src="/static/img/logo.png" alt="" class="small_img">
                 </div>
               </div>
 
@@ -183,10 +183,31 @@
                   <input type="tel" class="apartment_input" name="tel" placeholder="Телефон" required>
                   <input type="email" class="apartment_input" name="email" placeholder="EMAIL" required>
                   <input type="submit" class="apartment_input submit" value="ЗАПИСАТЬСЯ">
+                  <span class="arrow"></span>
                 </form>
+
+                <a href="#plans_popup" class="view_more open_popup">Подробнее</a>
+              </div>
+            </div>
+            <div class="plans_content_cell floor hidden" data-room-number="floor">
+              <h3 class="apartment_title">3й этаж</h3>
+
+              <div class="apartment_img_block">
+                <div class="main_img_block">
+                  <img src="/static/img/room.jpg" alt="" class="big_img">
+                </div>
+                <div class="navigation_img_block">
+                  <img src="/static/img/room.jpg" alt="" class="small_img">
+                  <img src="/static/img/logo.png" alt="" class="small_img">
+                </div>
               </div>
 
-              <a href="#" class="view_more open_popup">Подробнее</a>
+              <div class="apartment_description">
+                <div class="apartment_form">
+                  <span class="arrow"></span>
+                </div>
+                <a href="#plans_popup" class="view_more open_popup">Подробнее</a>
+              </div>
             </div>
           </div>
         </div>
@@ -201,14 +222,40 @@
             <div class="done_graph"></div>
             <span class="status_text"><span class="percent">70</span>% готово</span>
           </div>
-        </div>
-
-        <div class="status_main">
           <h2 class="status_main_title">2017</h2>
-          <div class="status_main_timeline"></div>
-          <div class="status_main_slider"></div>
+          <div class="status_navigation_block">
+            <span class="year prev">2016</span>
+            <ul class="month_block">
+              <li class="month_cell">Январь</li>
+              <li class="month_cell">Февраль</li>
+              <li class="month_cell">Март</li>
+              <li class="month_cell">Апрель</li>
+              <li class="month_cell">Май</li>
+              <li class="month_cell">Июнь</li>
+              <li class="month_cell">Июль</li>
+              <li class="month_cell active">Август</li>
+              <li class="month_cell">Сентябрь</li>
+              <li class="month_cell">Октябрь</li>
+              <li class="month_cell">Ноябрь</li>
+              <li class="month_cell">Декабрь</li>
+            </ul>
+            <span class="year next hidden">2017</span>
+          </div>
         </div>
+      </div>
 
+      <div class="status_slider_container">
+
+        <div class="status_content_block">
+          <div class="status_content_cell">
+            <img src="./static/img/slider.jpg" alt="" class="status_content_img">
+            <span class="status_content_text">Август, 2017</span>
+          </div>
+          <div class="status_content_cell">
+            <img src="./static/img/slider.jpg" alt="" class="status_content_img">
+            <span class="status_content_text">Июль, 2017</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -217,10 +264,6 @@
         <h2 class="map_title">КАРТА И ИНФРАСТРУКТУРА</h2>
       </div>
       <div class="map" id="map">
-        <div class="map_filter_block">
-
-        </div>
-
       </div>
     </section>
 
@@ -263,10 +306,10 @@
       </div>
     </section>
 
-    <section class="main_form_container">
+    <section class="main_form_container form_container">
       <div class="container">
         <h2 class="main_form_title">Запись на просмотр квартиры</h2>
-        <form action="" method="POST" class="main_form">
+        <form action="/" method="POST" class="main_form form">
           <input type="text" class="main_form_input" name="name" placeholder="Ваше имя" required>
           <input type="tel" class="main_form_input" name="tel" placeholder="Телефон" required>
           <input type="submit" class="main_form_input submit" value="ЗАПИСАТЬСЯ">
@@ -275,12 +318,45 @@
             <label for="agree" class="main_form_label">Согласен на обработку персональных данных в соответствии с политикой конфиденциальности</label>
           </div>
         </form>
+        <div class="success_message hidden">
+          <h2 class="success_title">ЗАВКА ПРИНЯТА!</h2>
+          <p class="succes_text">НАШ МЕНЕДЖЕР СВЯЖЕТЬСЯ С ВАМИ В ТЕЧЕНИИ ОДНОГО ДНЯ для уточнения деталей</p>
+        </div>
+        <div class="error_message hidden">
+          <h2 class="success_title">Произошла ошибка</h2>
+          <p class="succes_text">Перезагрузите страницу и попробовать еще раз</p>
+        </div>
       </div>
     </section>
 
     <section id="pay" class="pay_container">
       <div class="container">
         <h2 class="pay_title">СПОСОБЫ ОПЛАТЫ</h2>
+
+        <div class="pay_buttons_block">
+          <a href="#" class="pay_button active" data-pay="Рассрочка">Рассрочка</a>
+          <a href="#" class="pay_button" data-pay="Ипотека">Ипотека</a>
+          <a href="#" class="pay_button" data-pay="Материнский капитал">Материнский капитал</a>
+          <a href="#" class="pay_button" data-pay="Военная ипотека">Военная ипотека</a>
+        </div>
+        <div class="pay_content_container">
+          <div class="pay_cell" data-pay="Рассрочка">
+            <h2 class="pay_cell_title">Рассрочка</h2>
+            <p class="pay_information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque corporis eaque enim harum impedit in incidunt ipsam, laboriosam, neque obcaecati officia optio perspiciatis quis repellat rerum sed unde vel?</p>
+          </div>
+          <div class="pay_cell hidden" data-pay="Ипотека">
+            <h2 class="pay_cell_title">Ипотека</h2>
+            <p class="pay_information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque corporis eaque enim harum impedit in incidunt ipsam, laboriosam, neque obcaecati officia optio perspiciatis quis repellat rerum sed unde vel?</p>
+          </div>
+          <div class="pay_cell hidden" data-pay="Материнский капитал">
+            <h2 class="pay_cell_title">Материнский капитал</h2>
+            <p class="pay_information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque corporis eaque enim harum impedit in incidunt ipsam, laboriosam, neque obcaecati officia optio perspiciatis quis repellat rerum sed unde vel?</p>
+          </div>
+          <div class="pay_cell hidden" data-pay="Военная ипотека">
+            <h2 class="pay_cell_title">Военная ипотека</h2>
+            <p class="pay_information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque corporis eaque enim harum impedit in incidunt ipsam, laboriosam, neque obcaecati officia optio perspiciatis quis repellat rerum sed unde vel?</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -391,9 +467,42 @@
     </div>
   </footer>
 
+  <!-- POPUPS -->
+  <a id="plans_popup" href="#plans_popup" class="popup_overlay plans_overlay"></a>
+  <div class="popup_container plans_popup">
+    <a title="Закрыть" href="#close" class="close_popup plans_close"></a>
+  </div>
+
+  <a id="form_popup" href="#form_popup" class="popup_overlay"></a>
+  <div class="popup_container form_popup">
+    <div class="popup_content form_content form_container">
+      <h2 class="main_form_title">ПЕРЕЗВОНИТЬ МНЕ</h2>
+      <form action="/" method="POST" class="main_form form">
+        <input type="text" class="main_form_input" name="name" placeholder="Ваше имя" required>
+        <input type="tel" class="main_form_input" name="tel" placeholder="Телефон" required>
+        <input type="submit" class="main_form_input submit" value="Отправить">
+        <div class="main_form_row">
+          <input type="checkbox" class="main_form_check" id="agree2" name="agree" required>
+          <label for="agree2" class="main_form_label">Согласен на обработку персональных данных в соответствии с политикой конфиденциальности</label>
+        </div>
+      </form>
+      <div class="success_message hidden">
+        <h2 class="success_title">ЗАВКА ПРИНЯТА!</h2>
+        <p class="succes_text">НАШ МЕНЕДЖЕР СВЯЖЕТЬСЯ С ВАМИ В ТЕЧЕНИИ ОДНОГО ДНЯ для уточнения деталей</p>
+      </div>
+      <div class="error_message hidden">
+        <h2 class="success_title">Произошла ошибка</h2>
+        <p class="succes_text">Перезагрузите страницу и попробовать еще раз</p>
+      </div>
+    </div>
+    <a title="Закрыть" href="#close" class="close_popup"></a>
+  </div>
+
   <script src="static/js/jquery-3.2.1.min.js"></script>
   <script src="static/js/slick.min.js"></script>
   <script src="static/js/inputmask.min.js"></script>
+  <script src="static/js/magnific_popup.min.js"></script>
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="static/js/main.js"></script>
 </body>
 </html>

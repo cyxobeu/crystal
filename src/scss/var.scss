@@ -18,6 +18,29 @@
   &:-ms-input-placeholder { color: $color; }
 }
 
+// СТИЛИ КРЕСТИКА ДЛЯ ЗАКРЫТИЯ ПОП-АПОВ И Т.Д
+@mixin close($top,$right,$color) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 1px;
+    top: 10px;
+    background: $color;
+  }
+  &::before { transform: rotate(45deg); }
+  &::after { transform: rotate(-45deg); }
+}
+
 $grey_back: #f2f2f2;
 $blue_back: #859cb5;
 $blue_font: #6e849c;
