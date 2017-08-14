@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
     uglify = require('gulp-uglify'),
-    spritesmith = require('gulp.spritesmith');s
+    spritesmith = require('gulp.spritesmith');
 
 var Path = {
   js_path : "./src/js/*.js",
@@ -20,7 +20,7 @@ gulp.task('sprite', function () {
     imgName: 'sprite.png',
     cssName: 'sprite.scss',
     cssFormat: 'css',
-    imgPath: '../img/sprite.png'
+    imgPath: '../static/img/sprite.png'
   }));
   var imgStream = spriteData.img
   .pipe(gulp.dest('./static/img/'));
@@ -35,7 +35,7 @@ gulp.task('scss', function() {
     this.emit('end');
   }))
   .pipe(sass({
-    css: './static/css',
+    css: './',
     sass: './src/scss',
     images: './static/img'
   }))
@@ -48,7 +48,7 @@ gulp.task('scss', function() {
       sourceMap: true,
       debug: true
   }))
-  .pipe(gulp.dest('./static/css'))
+  .pipe(gulp.dest('./'))
   .pipe(browserSync.reload({
     stream: true
   }));
